@@ -12,7 +12,7 @@ function chooseCriteria() {
   let alphaUpperChoice = confirm("Include uppercase letters?");
   let numberChoice = confirm("Include numbers?");
   let specialChoice = confirm("Include special characters?");
-  console.log(alphaLowerChoice + " " + alphaUpperChoice + " " + numberChoice + " " + specialChoice);
+  console.log("lower:" + alphaLowerChoice + "\nupper:" + alphaUpperChoice + "\nnumber:" + numberChoice + "\nspecial:" + specialChoice);
   if (alphaLowerChoice === true) {
     passwordSet = passwordSet + alphaLowerSet;
   }
@@ -35,6 +35,7 @@ function generatePassword() {
     roundedNumber = Math.floor(randomNumber);
     finalPassword = finalPassword + passwordSet[roundedNumber];
   }
+  passwordSet = "";
   return finalPassword;
 }
 
