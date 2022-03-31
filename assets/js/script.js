@@ -4,7 +4,7 @@ let alphaLowerSet = "abcdefghijklmnopqrstuvwxyz";
 let alphaUpperSet = alphaLowerSet.toLocaleUpperCase();
 let numberSet = "0123456789"
 let specialSet = "~`!@#$%^&*()_-+={}[]|\\;:\"'<,>.?/"
-let passwordBuild = "";
+let finalPassword = "";
 let passwordSet = "";
 
 function chooseCriteria() {
@@ -29,16 +29,17 @@ function chooseCriteria() {
 
 function generatePassword() {
   chooseCriteria();
-  passwordBuild = "";
+  finalPassword = "";
   for (let i = 0; i < 20; i++) {
     randomNumber = Math.random()*passwordSet.length;
     roundedNumber = Math.floor(randomNumber);
-    passwordBuild = passwordBuild + passwordSet[roundedNumber];
+    finalPassword = finalPassword + passwordSet[roundedNumber];
   }
+  return finalPassword;
 }
 
-generatePassword();
-console.log(passwordBuild);
+// generatePassword();
+console.log(finalPassword);
 console.log(passwordSet);
 
 // Write password to the #password input
