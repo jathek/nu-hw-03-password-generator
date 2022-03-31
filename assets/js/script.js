@@ -31,9 +31,9 @@ function generatePassword() {
   chooseCriteria();
   passwordBuild = "";
   for (let i = 0; i < 20; i++) {
-    randomNumber = Math.random()*specialSet.length;
+    randomNumber = Math.random()*passwordSet.length;
     roundedNumber = Math.floor(randomNumber);
-    passwordBuild = passwordBuild + specialSet[roundedNumber];
+    passwordBuild = passwordBuild + passwordSet[roundedNumber];
   }
 }
 
