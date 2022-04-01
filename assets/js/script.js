@@ -8,10 +8,21 @@ let finalPassword = "";
 let passwordSet = "";
 
 function chooseCriteria() {
-  let alphaLowerChoice = confirm("Include lowercase letters?");
-  let alphaUpperChoice = confirm("Include uppercase letters?");
-  let numberChoice = confirm("Include numbers?");
-  let specialChoice = confirm("Include special characters?");
+  let alphaLowerChoice = false;
+  let alphaUpperChoice = false;
+  let numberChoice = false;
+  let specialChoice = false;
+  let choiceAlertPunc = ".";
+  do {
+    alert("Please select at least one set" + choiceAlertPunc);
+    alphaLowerChoice = confirm("Include lowercase letters?");
+    alphaUpperChoice = confirm("Include uppercase letters?");
+    numberChoice = confirm("Include numbers?");
+    specialChoice = confirm("Include special characters?");
+    choiceAlertPunc = "!"
+  }
+  while (!alphaLowerChoice && !alphaUpperChoice && !numberChoice && !specialChoice);
+  // no let for following line so it sets globally
   lengthChoice = prompt("How many characters should the password contain? Enter a number between 8 and 128.");
   while (lengthChoice < 8 || lengthChoice > 128) {
     lengthChoice = prompt("The length must be between 8 and 128.");
@@ -35,7 +46,7 @@ function generatePassword() {
   chooseCriteria();
   finalPassword = "";
   for (let i = 0; i < lengthChoice; i++) {
-    randomNumber = Math.random()*passwordSet.length;
+    randomNumber = Math.random() * passwordSet.length;
     roundedNumber = Math.floor(randomNumber);
     finalPassword = finalPassword + passwordSet[roundedNumber];
   }
