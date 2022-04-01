@@ -22,16 +22,24 @@ function chooseCriteria() {
     choiceAlertPunc = "!"
   }
   while (!alphaLowerChoice && !alphaUpperChoice && !numberChoice && !specialChoice);
+  lengthChoice = prompt("How many characters should the password contain? Enter a number between 8 and 128.");
+  let lengthInvalid = false;
   do {
-    lengthChoice = prompt("How many characters should the password contain? Enter a number between 8 and 128.");
-    if (isNaN(lengthChoice)) {
-      alert("Length must be a positive integer!");
+    lengthInvalid = false;
+    if (!Number(lengthChoice)) {
+      lengthInvalid = true;
+      lengthChoice = prompt("Length must be a number!");
+    }
+    else if (!Number.isInteger(Number(lengthChoice))) {
+      lengthInvalid = true;
+      lengthChoice = prompt("Length must be a positive integer!");
+    }
+    else if (lengthChoice < 8 || lengthChoice > 128) {
+      lengthInvalid = true;
+      lengthChoice = prompt("The length must be between 8 and 128.");
     }
   }
-  while (isNaN(lengthChoice));
-  while (lengthChoice < 8 || lengthChoice > 128) {
-    lengthChoice = prompt("The length must be between 8 and 128.");
-  }
+  while (lengthInvalid);
   console.log("lower:" + alphaLowerChoice + "\nupper:" + alphaUpperChoice + "\nnumber:" + numberChoice + "\nspecial:" + specialChoice);
   if (alphaLowerChoice) {
     passwordSet = passwordSet + alphaLowerSet;
