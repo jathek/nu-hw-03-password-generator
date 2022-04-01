@@ -22,8 +22,21 @@ function chooseCriteria() {
     choiceAlertPunc = "!"
   }
   while (!alphaLowerChoice && !alphaUpperChoice && !numberChoice && !specialChoice);
-  // no let for following line so it sets globally
-  lengthChoice = prompt("How many characters should the password contain? Enter a number between 8 and 128.");
+  let lengthInvalid = false;
+  do {
+    lengthInvalid = false;
+    // no let for lengthChoice so it sets globally
+    lengthChoice = prompt("How many characters should the password contain? Enter a number between 8 and 128.");
+    for (let i = 0; i < lengthChoice.length; i++) {
+      if (!numberSet.split("").includes(lengthChoice[i])) {
+        lengthInvalid = true;
+      }
+    }
+    if (lengthInvalid) {
+      alert("Length must be a positive integer!");
+    }
+  }
+  while (lengthInvalid);
   while (lengthChoice < 8 || lengthChoice > 128) {
     lengthChoice = prompt("The length must be between 8 and 128.");
   }
