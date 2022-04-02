@@ -60,7 +60,7 @@ function generateCharSet() {
   let numberSet = "0123456789";
   let specialSet = "~`!@#$%^&*()_-+={}[]|\\;:\"'<,>.?/";
   let userCharSet = "";
-  // ask user to confirm characster sets for password
+  // ask user to confirm character sets for password
   if (confirm("Include lowercase letters?")) {
     userCharSet += alphaLowerSet;
   }
