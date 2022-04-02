@@ -69,7 +69,7 @@
 ## About The Project
 
 <div align="center">
-    <a href="https://nearcatch.github.io/nu-hw-03-password-generator/"><img style="height: 50%;" alt="https://github.com/nearcatch/nu-hw-03-password-generator/blob/main/assets/readme/full-page-screenshot.png" /></a>
+    <a href="https://nearcatch.github.io/nu-hw-03-password-generator/"><img style="width: 50%;" src="https://raw.githubusercontent.com/nearcatch/nu-hw-03-password-generator/main/assets/readme/full-page-screenshot.png" /></a>
 </div>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -142,4 +142,4 @@ Project Link: [https://github.com/nearcatch/nu-hw-03-password-generator](https:/
 [license-url]: https://github.com/nearcatch/nu-hw-03-password-generator/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/jason-thekkekara-050303167
-[product-screenshot]: https://github.com/nearcatch/nu-hw-03-password-generator/blob/main/assets/readme/full-page-screenshot.png
+[product-screenshot]: https://raw.githubusercontent.com/nearcatch/nu-hw-03-password-generator/main/assets/readme/full-page-screenshot.png
