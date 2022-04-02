@@ -1,11 +1,11 @@
 // Assignment Code
 // get element for button
 let generateBtn = document.querySelector("#generate");
-// set variables for final pass555word generation
+// set variables for final password generation
 let finalCharSet;
 let finalLength;
 
-// function for button
+// generate password from user input gathered by generateLength and generateCharSet
 function generatePassword() {
   // call generateLength to get length of password
   finalLength = generateLength();
@@ -22,6 +22,8 @@ function generatePassword() {
   // pass complete password out of function
   return finalPassword;
 }
+
+// set password length based on user input
 function generateLength() {
   // ask user to confirm length of password
   let userLength = prompt("How many characters should the password contain? Enter a number between 8 and 128.");
@@ -49,6 +51,8 @@ function generateLength() {
   // pass userLength out of function
   return userLength;
 }
+
+// set character sets based on user input
 function generateCharSet() {
   // create sets
   let alphaLowerSet = "abcdefghijklmnopqrstuvwxyz";
@@ -56,7 +60,7 @@ function generateCharSet() {
   let numberSet = "0123456789";
   let specialSet = "~`!@#$%^&*()_-+={}[]|\\;:\"'<,>.?/";
   let userCharSet = "";
-  // ask user to confirm sets for password
+  // ask user to confirm characster sets for password
   if (confirm("Include lowercase letters?")) {
     userCharSet += alphaLowerSet;
   }
