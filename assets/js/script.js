@@ -7,11 +7,11 @@ let finalLength;
 
 // function for button
 function generatePassword() {
-  // call generateLength to get finalLength
+  // call generateLength to get length of password
   finalLength = generateLength();
-  // call generateSet to get finalSet
+  // call generateSet to get character sets for password
   finalSet = generateSet();
-  // generate finalPassword
+  // generate password
   let finalPassword = "";
   for (let i = 0; i < finalLength; i++) {
     randomNumber = Math.random() * finalSet.length;
@@ -19,7 +19,7 @@ function generatePassword() {
     finalPassword += finalSet[roundedNumber];
   }
   finalSet = "";
-  // pass finalPassword out of function
+  // pass complete password out of function
   return finalPassword;
 }
 function generateLength() {
