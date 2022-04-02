@@ -1,81 +1,81 @@
 // Assignment Code
 // get element for button
 let generateBtn = document.querySelector("#generate");
-// set variables for final password generation
-let finalSet;
+// set variables for final pass555word generation
+let finalCharSet;
 let finalLength;
 
 // function for button
 function generatePassword() {
   // call generateLength to get length of password
   finalLength = generateLength();
-  // call generateSet to get character sets for password
-  finalSet = generateSet();
+  // call generateCharSet to get character sets for password
+  finalCharSet = generateCharSet();
   // generate password
   let finalPassword = "";
   for (let i = 0; i < finalLength; i++) {
-    randomNumber = Math.random() * finalSet.length;
+    randomNumber = Math.random() * finalCharSet.length;
     roundedNumber = Math.floor(randomNumber);
-    finalPassword += finalSet[roundedNumber];
+    finalPassword += finalCharSet[roundedNumber];
   }
-  finalSet = "";
+  finalCharSet = "";
   // pass complete password out of function
   return finalPassword;
 }
 function generateLength() {
   // ask user to confirm length of password
-  let choiceLength = prompt("How many characters should the password contain? Enter a number between 8 and 128.");
+  let userLength = prompt("How many characters should the password contain? Enter a number between 8 and 128.");
   // boolean for length validity. reset on every recursion
   let lengthValid = true;
   // confirm if user input is a number
-  if (!Number(choiceLength)) {
+  if (!Number(userLength)) {
     lengthValid = false;
-    choiceLength = alert("Length must be a number!");
+    userLength = alert("Length must be a number!");
   }
   // confirm if user input is an integer
-  else if (!Number.isInteger(Number(choiceLength))) {
+  else if (!Number.isInteger(Number(userLength))) {
     lengthValid = false;
-    choiceLength = alert("Length must be a positive integer!");
+    userLength = alert("Length must be a positive integer!");
   }
   // confirm if user input is between 8 and 128
-  else if (choiceLength < 8 || choiceLength > 128) {
+  else if (userLength < 8 || userLength > 128) {
     lengthValid = false;
-    choiceLength = alert("The length must be between 8 and 128!");
+    userLength = alert("The length must be between 8 and 128!");
   }
   // if input is invalid, recurse until valid length received
   if (!lengthValid) {
-    choiceLength = generateLength();
+    userLength = generateLength();
   }
-  // pass choiceLength out of function
-  return choiceLength;
+  // pass userLength out of function
+  return userLength;
 }
-function generateSet() {
+function generateCharSet() {
   // create sets
   let alphaLowerSet = "abcdefghijklmnopqrstuvwxyz";
   let alphaUpperSet = alphaLowerSet.toLocaleUpperCase();
   let numberSet = "0123456789";
   let specialSet = "~`!@#$%^&*()_-+={}[]|\\;:\"'<,>.?/";
-  let choiceSet = "";
+  let userCharSet = "";
   // ask user to confirm sets for password
   if (confirm("Include lowercase letters?")) {
-    choiceSet += alphaLowerSet;
+    userCharSet += alphaLowerSet;
   }
   if (confirm("Include uppercase letters?")) {
-    choiceSet += alphaUpperSet;
+    userCharSet += alphaUpperSet;
   }
   if (confirm("Include numbers?")) {
-    choiceSet += numberSet;
+    userCharSet += numberSet;
   }
   if (confirm("Include special characters?")) {
-    choiceSet += specialSet;
+    userCharSet += specialSet;
   }
-  // if choiceSet is empty, ask user again
-  if (choiceSet === "") {
+  // if userCharSet is empty, ask user again
+  if (userCharSet === "") {
     alert("You must choose at least one set!")
-    choiceSet = generateSet();
+    userCharSet = generateCharSet();
   }
-  // pass choiceSet out of function
-  return choiceSet;
+  // pass userCharSet out of function
+  return userCharSet;
 }
 
 // Write password to the #password input
