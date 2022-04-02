@@ -69,7 +69,7 @@
 ## About The Project
 
 <div align="center">
-    <a href="https://nearcatch.github.io/nu-hw-03-password-generator/"><img style="width: 50%;" src="https://raw.githubusercontent.com/nearcatch/nu-hw-03-password-generator/main/assets/readme/full-page-screenshot.png" /></a>
+    <a href="https://nearcatch.github.io/nu-hw-03-password-generator/"><img style="width: 75%;" src="https://raw.githubusercontent.com/nearcatch/nu-hw-03-password-generator/main/assets/readme/full-page-screenshot.png" /></a>
 </div>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
